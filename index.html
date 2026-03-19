@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ToDo App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Lista de Tareas</h1>
+
+<div class="form">
+<div class="input-group">
+<input id="tareaInput" placeholder="Nueva tarea">
+<button class="add-btn" onclick="openModal()">+</button>
+</div>
+</div>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h2>Agregar Nueva Tarea</h2>
+<label for="modalTexto">Texto de la tarea:</label>
+<input id="modalTexto" placeholder="Escribe la tarea aquí">
+<label for="modalPriority">Prioridad:</label>
+<select id="modalPriority">
+<option value="low">Baja</option>
+<option value="medium" selected>Media</option>
+<option value="high">Alta</option>
+</select>
+<label for="modalDueDate">Fecha límite:</label>
+<input type="date" id="modalDueDate">
+<button onclick="agregarTareaModal()">Agregar Tarea</button>
+</div>
+</div>
+
+<div class="filtros">
+<button onclick="filtrar('todas')">Todas</button>
+<button onclick="filtrar('pendientes')">Pendientes</button>
+<button onclick="filtrar('completadas')">Completadas</button>
+</div>
+
+<div class="actions">
+<button onclick="limpiarCompletadas()">Limpiar Completadas</button>
+<button onclick="exportar()">Exportar</button>
+</div>
+
+<div id="stats"></div>
+
+<input id="search" placeholder="Buscar tareas..." oninput="filtrarTexto()">
+
+<div id="progress"></div>
+
+<ul id="lista"></ul>
+
+<footer>Todo App - Proyecto de Portafolio</footer>
+
+<div id="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
